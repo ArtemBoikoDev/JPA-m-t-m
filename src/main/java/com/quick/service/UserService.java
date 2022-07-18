@@ -8,5 +8,5 @@ public interface UserService {
 
     Account create(Account account);
 
-    Account addTariffToUser(int accountId, int tariffID);
+    Account addTariffToUser(int accountId, int tariffId);
 }
