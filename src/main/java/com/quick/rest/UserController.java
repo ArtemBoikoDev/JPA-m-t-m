@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -19,13 +21,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping(consumes = "application/json",
-                 produces = "application/json")
+    @PostMapping(consumes = APPLICATION_JSON_VALUE,
+                 produces = APPLICATION_JSON_VALUE)
     public Account create(@RequestBody Account account) {
         return userService.create(account);
     }
 
-    @GetMapping(produces = "application/json")
+    @GetMapping(produces = APPLICATION_JSON_VALUE)
     public List<Account> findAll() {
         return userService.findAll();
     }
